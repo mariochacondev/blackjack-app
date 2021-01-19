@@ -16,6 +16,19 @@ export default function App() {
     setText(!changeText)
   
   }
+  const[changeText2, setText2] = useState(false);
+
+  const handlePress2 = function(){
+    setText2(!changeText2)
+  
+  }
+  const[changeText3, setText3] = useState(false);
+
+  const handlePress3 = function(){
+    setText3(!changeText3)
+  
+  }
+  
   
   return (
     <View style={styles.container}>
@@ -23,12 +36,25 @@ export default function App() {
       
 
       <View style={styles.body}>
+
+      <Navbar />
+
+
       { changeText === true &&
-        <Text>CouCou</Text>
+        <Text>Page1</Text>
       }
-        <Button title={changeText === false ? "Afficher" : "Cacher"} 
+      { changeText2 === true &&
+        <Text>Page2</Text>
+      }
+      { changeText3 === true &&
+        <Text>Page3</Text>
+      }
+        <Button title={changeText === false ? "Afficher Page 1" : "Cacher Page 1"} 
         onPress={handlePress}/>
-    
+        <Button title={changeText2 === false ? "Afficher Page 2" : "Cacher Page 2"} 
+        onPress={handlePress2}/>
+        <Button title={changeText3 === false ? "Afficher Page 3" : "Cacher Page 3"} 
+        onPress={handlePress3}/>
       
       </View>
       <StatusBar style="auto" />
@@ -43,9 +69,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
+
   body: {
     height: "100%",
     justifyContent: 'center',
     alignItems: 'center',
-  }
+    flex: 1,
+    flexDirection: 'row',
+  },
+
 });
