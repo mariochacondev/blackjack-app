@@ -6,7 +6,7 @@ export default function Navbar(props){
 
     let buttons = props.pages.map(function(page) {
 
-        return <Button color="#AAA" title={page.title} onPress={function () {
+        return <Button color="#BBB" title={page.title} onPress={function () {
 
             props.setIdPage(page.id)
 
