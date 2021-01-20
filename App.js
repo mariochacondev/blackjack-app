@@ -27,8 +27,15 @@ export default function App() {
       title:"PAGE 3",
       component:<Page3/>,
     },
+    
+  ];
 
-  ]
+  const cartes = [{id: "1",title: "As",},{id: "11",title: "As",},{id: "2",title: "Deux",},{id: "3",title: "Trois",},
+    {id: "4",title: "Quatre",},{id: "5",title: "Cinq",},{id: "6",title: "Six",},
+    {id: "7",title: "Sept",},{id: "8",title: "Huit",},{id: "9",title: "Neuf",},
+    {id: "10",title: "Dix",},{id: "11",title: "Valet",},{id: "12",title: "Dame",},
+    {id: "13",title: "Roi",},];
+
 
   let body = pages.find(function(page) {
     return page.id === idPage
