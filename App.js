@@ -29,7 +29,7 @@ export default function App() {
     },
     
   ];
-
+  const [idCarte, setIdCarte] = useState(" ")
   const cartes = [{id: "1",title: "As",},{id: "11",title: "As",},{id: "2",title: "Deux",},{id: "3",title: "Trois",},
     {id: "4",title: "Quatre",},{id: "5",title: "Cinq",},{id: "6",title: "Six",},
     {id: "7",title: "Sept",},{id: "8",title: "Huit",},{id: "9",title: "Neuf",},
