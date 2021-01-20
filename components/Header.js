@@ -20,7 +20,7 @@ export default function Header(props) {
       alignItems: 'center',
     },
     appTitle: {
-      fontWeight: 800,
+      fontWeight: '800',
       color: 'linen',
     },
   });
