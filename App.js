@@ -39,8 +39,10 @@ export default function App() {
 
   let body = pages.find(function(page) {
     return page.id === idPage
-  })
-  
+  });
+  let paquet = cartes.find(function(carte){
+    return carte.id == idCarte
+  });
   
   return (
     <View style={styles.container}>
@@ -50,7 +52,9 @@ export default function App() {
       <Navbar pages={pages} setIdPage={setIdPage} />
 
       {body.component}
+      <View>
         
+      </View>  
       
       
       <StatusBar style="auto" />
