@@ -15,7 +15,7 @@ export default function App() {
     {
       id:"1",
       title:"PAGE 1",
-      component:<Page1/>,
+      component:<Page1 pwet={setIdPage}/>,
     },
     {
       id:"2",
