@@ -15,10 +15,10 @@ export default function App() {
   
   return (
       <View style={styles.container}>
-      {idEtape !== undefined &&
+      {idCourse !== undefined &&
       <Course id={idCourse} setId={setIdCourse} />
       }
-      
+
       {idFiche !== undefined &&
       <Fiche id={idFiche} setId={setIdFiche} />
       }

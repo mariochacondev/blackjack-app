@@ -29,10 +29,13 @@ export default function Course(props) {
         <View style={styles.container}>
             <Text style={styles.title}>{course.title}</Text>
             <View style={styles.page}>
+                
             {course.button.map(function(buttonData) {
                 return <Button color="darkcyan" title={buttonData.content} onPress={function(){
                     props.setId(buttonData.nextStepId.id)
-                }}/>              
+                }}/>
+                
+                
             })}
             {course.button.map(function(buttonData) {
                 return <Text>{buttonData.img}</Text>
