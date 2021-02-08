@@ -9,7 +9,7 @@ export default function Course(props) {
     const [ course, setCourse ] = useState(undefined);
 
     useEffect(function() {
-        axios.get(`http://127.0.0.1:8000/parcours/`+ props.id)
+        axios.get(`http://127.0.0.1:8000/parcoursplant/`+ props.id)
         .then(function(response) {
             setCourse(response.data);
         }) 
@@ -30,15 +30,22 @@ export default function Course(props) {
             <Text style={styles.title}>{course.title}</Text>
             <View style={styles.page}>
                 
-            {course.button.map(function(buttonData) {
-                return <Button color="darkcyan" title={buttonData.content} onPress={function(){
-                    props.setId(buttonData.nextStepId.id)
+            {course.buttonPlants.map(function(buttonPlantsData) {
+                return <Button color="darkcyan" title={buttonPlantsData.content} onPress={function(){
+                    console.log(buttonPlantsData);
+                if (buttonPlantsData.nextStepId){
+                    props.setIdFiche(undefined)
+                    props.setId(buttonPlantsData.nextStepId.id)
+                }else{
+                    props.setId(undefined)
+                    props.setIdFiche(buttonPlantsData.finalSheet.id)
+                }
                 }}/>
                 
                 
             })}
-            {course.button.map(function(buttonData) {
-                return <Text>{buttonData.img}</Text>
+            {course.buttonPlants.map(function(buttonPlantsData) {
+                return <Text>{buttonPlantsData.img}</Text>
             })}
             </View>
 
@@ -60,9 +67,6 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
     },
-    Button: {
-        margin: "30",
-    }
   
   });
 

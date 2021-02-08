@@ -1,27 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { Component, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
-import axios from 'axios';
-import Course from './component/Course';
-
+import { Button, StyleSheet, View } from 'react-native';
+import Index from './Index';
 
 
 export default function App() {
+  
 
-
-  const [ idFiche, setIdFiche ] = useState(undefined);
-  const [ idCourse, setIdCourse ] = useState(1);
-
+  const [component, setComponent] = useState(false);
   
   return (
       <View style={styles.container}>
-      {idCourse !== undefined &&
-      <Course id={idCourse} setId={setIdCourse} />
-      }
 
-      {idFiche !== undefined &&
-      <Fiche id={idFiche} setId={setIdFiche} />
+      <View style={styles.button}>
+      <Button title="Start Course" onPress={() =>{
+        setComponent(true)
+      }} />
+      {component === true &&
+      <Index/>
       }
+      </View>
 
         <StatusBar style="auto" />
         </View>
@@ -32,6 +30,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "darkseagreen",
+    alignItems: 'center',
   },
+  button: {
+    flex:1,
+    position:"absolute",
+    top:'50%',
+  }
 
 });
